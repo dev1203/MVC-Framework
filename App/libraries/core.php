@@ -3,7 +3,8 @@
     - This is the core library that will be used to get the URL 
     - and load the current view
 */
-class core{
+class Core{
+
     protected $currentController = 'pages';
     protected $currentMethod = 'index';
 
@@ -48,7 +49,15 @@ class core{
             - store it as an empty array
         */
         $this->params = $url ? array_values($url) : [];
-
+        /*
+            - This is a callback which will be call the function
+            - in array with the params as an paramteter to the functions 
+            - For example if the URL is MVC/pages/add
+            - Then the currentController is pages and the current method
+            - is add and it will call the method add with $this->params
+            - as a parameter
+        */
+        call_user_func_array([$this->currentController,$this->currentMethod],$this->params);
 
     }
 /*
