@@ -1,5 +1,5 @@
 <?php
-
+require_once 'config/config.php';
 /*
     - This will require all the php file whatever is called
     - For example a new Core is initialized 
