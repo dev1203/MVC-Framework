@@ -72,6 +72,7 @@ class Database{
         $this->execute();
         return $this->stmt->fetchAll(PDO::FETCH_OBJ);
     }
+    
     /*
         - This function will return just one 
         - value of the statment 
